@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj": {}
+    "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj": {
+    "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj",
+        "projectUniqueName": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj",
+        "projectPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj",
         "packagesPath": "C:\\Users\\venel\\.nuget\\packages\\",
-        "outputPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\obj\\",
+        "outputPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\venel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,6 +54,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
