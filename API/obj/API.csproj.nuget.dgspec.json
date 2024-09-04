@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj": {}
+    "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj": {
+    "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj",
+        "projectUniqueName": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj",
+        "projectPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj",
         "packagesPath": "C:\\Users\\venel\\.nuget\\packages\\",
-        "outputPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\obj\\",
+        "outputPath": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\venel\\AppData\\Roaming\\NuGet\\NuGet.Config",

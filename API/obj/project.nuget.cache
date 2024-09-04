@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g7XN68fr1rw=",
+  "dgSpecHash": "441W/bDpc2I=",
   "success": true,
-  "projectFilePath": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj",
+  "projectFilePath": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\venel\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\venel\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
