@@ -130,3 +130,5 @@ D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\System.IdentityModel.T
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\package-lock.json
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\package.json
