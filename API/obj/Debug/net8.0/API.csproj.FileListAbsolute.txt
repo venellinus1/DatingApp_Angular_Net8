@@ -132,3 +132,6 @@ D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Microsoft.IdentityMode
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\package-lock.json
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\package.json
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Data\Migrations\UserSeedData.json
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Data\UserSeedData.json
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\AutoMapper.dll
