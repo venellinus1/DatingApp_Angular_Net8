@@ -5,4 +5,13 @@
     <button class="btn btn-outline-primary me-3" (click)="get500Error()">Test 500 Error</button>
     <button class="btn btn-outline-primary me-3" (click)="get400ValidationError()">Test 400 Validation Error</button>
     
+    @if(validationErrors.length > 0){
+        <div class="row mt-">
+            <ul class="text-danger">
+                @for(error of validationErrors; track $index){
+                    <li>{{ error }}</li>
+                }
+            </ul>
+        </div>
+    }
 </div>
