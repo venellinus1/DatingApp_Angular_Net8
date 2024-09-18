@@ -135,3 +135,5 @@ D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\package.json
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Data\Migrations\UserSeedData.json
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Data\UserSeedData.json
 D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\AutoMapper.dll
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\CloudinaryDotNet.dll
+D:\studies\AngularDotNet\DatingAppS2\api\bin\Debug\net8.0\Newtonsoft.Json.dll
