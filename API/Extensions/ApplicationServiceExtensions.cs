@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using API.Data;
 using API.Interfaces;
 using API.Services;
@@ -10,7 +11,11 @@ public static class ApplicationServiceExtensions
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, 
         IConfiguration config)
     {
-        services.AddControllers();
+        services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+            });
         services.AddDbContext<DataContext>(options => 
         {
             options.UseSqlite(config.GetConnectionString("DefaultConnection"));
