@@ -16,7 +16,7 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
 {
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<MemberDTO>>> GetUsers()
+    public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
     {
         var users = await userRepository.GetMembersAsync();
         return Ok(users);
@@ -24,7 +24,7 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
 
 
     [HttpGet("{username}")] // /api/users/{id}
-    public async Task<ActionResult<MemberDTO>> GetUser(string username)
+    public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
         var user = await userRepository.GetMemberAsync(username);
         if(user == null) return NotFound();

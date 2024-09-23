@@ -14,7 +14,7 @@ public static class ApplicationServiceExtensions
         services.AddControllers()
             .AddJsonOptions(options =>
             {
-                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
             });
         services.AddDbContext<DataContext>(options => 
         {
