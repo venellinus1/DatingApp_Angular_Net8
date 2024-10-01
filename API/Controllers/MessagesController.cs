@@ -3,10 +3,12 @@ using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
+[Authorize]
 public class MessagesController
     (IMessageRepository messageRepository, IUserRepository userRepository, IMapper mapper)
     : BaseApiController
@@ -52,5 +54,29 @@ public class MessagesController
     {
         var currentUsername = User.GetUsername();
         return Ok(await messageRepository.GetMessageThread(currentUsername, username));
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult> DeleteMessage(int id)
+    {
+        var username = User.GetUsername();
+        var message = await messageRepository.GetMessage(id);
+        if (message == null) BadRequest("Cannot delete this message");
+
+        //check if user is either sender or recipient of the message
+        if (message.SenderUsername != username || message.RecipientUsername != username) return Forbid();
+
+        if (message.SenderUsername == username) message.SenderDeleted = true;
+        if (message.RecipientUsername == username) message.RecepientDeleted = true;
+
+        //patern matching with property patterns - .Net 8. Slightly cleaner than using 2 if's
+        if (message is {SenderDeleted: true, RecepientDeleted: true})
+        {
+            messageRepository.DeleteMessage(message);
+        }
+
+        if (await messageRepository.SaveAllAsync()) return Ok();
+
+        return BadRequest("Problem deleting the message");
     }
 }
