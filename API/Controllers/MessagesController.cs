@@ -56,15 +56,16 @@ public class MessagesController
         return Ok(await messageRepository.GetMessageThread(currentUsername, username));
     }
 
-    [HttpGet("{id}")]
+    [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteMessage(int id)
     {
         var username = User.GetUsername();
         var message = await messageRepository.GetMessage(id);
         if (message == null) BadRequest("Cannot delete this message");
 
-        //check if user is either sender or recipient of the message
-        if (message.SenderUsername != username || message.RecipientUsername != username) return Forbid();
+        //check if the username is neither one of the sender or recipient
+        if (message.SenderUsername != username && message.RecipientUsername != username) 
+            return Forbid();
 
         if (message.SenderUsername == username) message.SenderDeleted = true;
         if (message.RecipientUsername == username) message.RecepientDeleted = true;
