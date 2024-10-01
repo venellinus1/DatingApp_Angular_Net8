@@ -10,19 +10,19 @@ namespace API.Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-            name: "loogingFor",
-            table: "Users",
-            newName: "lookingFor");
+            // migrationBuilder.RenameColumn(
+            // name: "loogingFor",
+            // table: "Users",
+            // newName: "lookingFor");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-            name: "lookingFor",
-            table: "Users",
-            newName: "loogingFor");
+            // migrationBuilder.RenameColumn(
+            // name: "lookingFor",
+            // table: "Users",
+            // newName: "loogingFor");
         }
     }
 }

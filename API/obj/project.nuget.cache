@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ERi/QylwuwI=",
+  "dgSpecHash": "8axBMxlSWYY=",
   "success": true,
-  "projectFilePath": "D:\\studies\\AngularDotNet\\DatingAppS2\\API\\API.csproj",
+  "projectFilePath": "D:\\studies\\AngularDotNet\\DatingAppS2\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\venel\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\venel\\.nuget\\packages\\cloudinarydotnet\\1.26.2\\cloudinarydotnet.1.26.2.nupkg.sha512",
