@@ -7,8 +7,9 @@ public class PresenceTracker
     //just for a demo - use a dictionary to store the connected users - id, list of connections
     //!! this is not thread -safe
     private static readonly Dictionary<string, List<string>> OnlineUsers = [];
-    public Task UserConnected(string username, string connectionId)
+    public Task<bool> UserConnected(string username, string connectionId)
     {
+        var isOnline = false;
         lock(OnlineUsers)
         {
             if (OnlineUsers.ContainsKey(username))
@@ -18,25 +19,28 @@ public class PresenceTracker
             else 
             {
                 OnlineUsers.Add(username, [connectionId]);// [connectionId] = C# 8 feature = new List<string>{connectionId}
+                isOnline = true;
             }
         }
-        return Task.CompletedTask;
+        return Task.FromResult(isOnline);
     }
 
-    public Task UserDisconnected(string username, string connectionId)
+    public Task<bool> UserDisconnected(string username, string connectionId)
     {
+        var isOffline = false;
         lock(OnlineUsers)
         {
-            if (!OnlineUsers.ContainsKey(username)) return Task.CompletedTask; // user not in the dictionary - nothing to do here
+            if (!OnlineUsers.ContainsKey(username)) return Task.FromResult(isOffline); // user not in the dictionary - nothing to do here
 
             OnlineUsers[username].Remove(connectionId);
 
             if (OnlineUsers[username].Count == 0)// no more connections in the dict - remove the key for that user
             {
                 OnlineUsers.Remove(username); 
+                isOffline = true;
             }
         }
-        return Task.CompletedTask; 
+        return Task.FromResult(isOffline); 
     }
 
     public Task<string[]> GetOnlineUsers()
