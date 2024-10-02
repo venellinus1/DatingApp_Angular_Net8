@@ -4,6 +4,7 @@ import { User } from '../_models/User';
 import { map } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { LikesService } from './likes.service';
+import { PresenceService } from './presence.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,8 @@ export class AccountService {
   baseUrl = environment.apiUrl;
   currentUser = signal<User | null>(null);//jwt token in current user
   private likeService = inject(LikesService);//careful when injecting service within service - if Likes.service injects Account service that will cause circular dependency
+  private presenceService = inject(PresenceService);
+  
   roles = computed(() => {
     const user = this.currentUser();
     if (user && user.token){
@@ -48,10 +51,12 @@ export class AccountService {
     localStorage.setItem('user', JSON.stringify(user));
     this.currentUser.set(user);
     this.likeService.getLikeIds();
+    this.presenceService.createHubConnection(user);
   }
 
   logout(){
     localStorage.removeItem('user');
     this.currentUser.set(null);
+    this.presenceService.stopHubConnection();
   }
 }
