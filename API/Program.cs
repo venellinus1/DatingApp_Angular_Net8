@@ -26,9 +26,18 @@ app.UseCors(x =>
     .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
 app.UseAuthentication();
+
+// middleware - place is important! 
+// these are added bc of Angular build - to be served in here
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+//fallback unknown routes to index.html - which will pass it to Angular
+app.MapFallbackToController("Index", "Fallback");
 
 app.MapHub<PresenceHub>("hubs/presence");
 app.MapHub<MessageHub>("hubs/message");
