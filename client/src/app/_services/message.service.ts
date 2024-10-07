@@ -7,6 +7,7 @@ import { Message } from '../_models/Message';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 import { User } from '../_models/User';
 import { Group } from '../_models/group';
+import { BusyService } from './busy.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +19,19 @@ export class MessageService {
   hubUrl = environment.hubsUrl;
   hubConnection?: HubConnection;
   messageThread = signal<Message[]>([]);
-
+  private busyService = inject(BusyService);
 
   createHubConnection(user: User, otherUsername: string){
+    this.busyService.busy();
     this.hubConnection = new HubConnectionBuilder()
       .withUrl(this.hubUrl + 'message?user=' + otherUsername, {
         accessTokenFactory: () => user.token
       })
       .withAutomaticReconnect()
       .build();
-    this.hubConnection.start().catch(error => console.log(error)); 
+    this.hubConnection.start()
+      .catch(error => console.log(error))
+      .finally(() => this.busyService.idle()); 
 
     //send back messages - !!! Careful here - ReceiveMessageThread should match the  method name on API ReceiveMessageThread
     this.hubConnection.on('ReceiveMessageThread', messages => {
