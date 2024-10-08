@@ -17,3 +17,4 @@ Building web application from scratch using **.Net 8, ASPNET Core, Entity Framew
 - **Paging, Sorting and Filtering**
 - A Private Messaging system to the app, using **SignalR** for real time presence and live messaging between users
 - Published at Azure
+- CI/CD with GitHub Actions
