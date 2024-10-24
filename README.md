@@ -3,6 +3,9 @@
 Demo:
 https://dating-app-s2-anakdnh0gmdcc7f5.germanywestcentral-01.azurewebsites.net/
 
+demo user: lisa
+password: Pa$$w0rd
+
 Project details:
 Building web application from scratch using **.Net 8, ASPNET Core, Entity Framework Core and Angular (v18)**
 
